@@ -1,0 +1,351 @@
+body {
+    background-color: #060606;
+    color: #fafafa;
+    font-family: Arvo, sans-serif;
+    font-weight: 300;
+    font-size:10px;
+}
+
+.main-bg {
+    background-image: url(../img/cover.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 100vh;
+}
+.container{
+    background:none;
+}
+
+.main-bg:before {
+    -webkit-transition: all 1s;
+    background: rgba(0, 0, 0, 0.5);
+    content: ' ';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all 1s;
+    width: 100%;
+}
+
+.particles {
+  width: 100%;
+  height: 100%;
+}
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(polina.jpg) no-repeat;
+    background-size: cover; 
+}
+.vid-content video {
+  width: 100%;
+  display: block;
+}
+.vid-content:before {
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+    z-index: 1;
+}
+canvas#js-particles {
+    background: transparent;
+    position: fixed;
+    z-index: 1;
+}
+
+
+
+button{
+    margin: 0 auto;
+    max-width: 500px;
+    font-weight: bold;
+    color: #222;    
+    height: 4rem;
+    width: 200px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 1;
+    will-change: opacity, transform;
+    transition: .3s ease-out;
+    color: #2a2a2a;
+    background-color: #fff;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;    
+    border: 0px solid #aaa;
+    display: inline-block;
+    line-height: 36px;
+    padding: 0 2rem;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: none;
+}
+
+.btn:hover{
+    background: #aaa;
+}
+.form.container {
+    text-align: center;
+    left: 0;
+    z-index: 11;
+    width: 100%;
+    position: absolute;
+    bottom: 20%;
+}
+.form.pop-up {
+    background: rgba(0, 0, 0, 0.95);
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.form.pop-up .row {
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    margin-top: -200px;
+    width: 100%;
+}
+
+form {
+    font-family: Arvo, sans-serif;
+}
+
+.form.container h2 {
+    font-size: 16px;
+    font-family: Arvo, sans-serif;
+}
+
+.middle-text {
+    position: absolute;
+    height: 300px;
+    margin-top: -120px;
+    top: 50%;
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+    z-index: 10;
+}
+
+.middle-text h1 {
+    margin: 0;
+    font-size: 6.5rem;
+    line-height: 10rem;
+    font-family: Montserrat, sans-serif;
+    letter-spacing: 2.5rem;
+    text-transform: uppercase;
+}
+.middle-text .subtitle{
+    font-size: 3rem;
+    color: #ccc;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+form {
+    display: inline-block;
+    margin: 0 auto;
+    width: auto;
+}
+
+form h2 {
+    margin-bottom: 70px;
+}
+i.fa {
+    background: #fff;
+    color: #000;
+    border-radius: 50%;
+    font-size: 15px;
+    text-align: center;
+    line-height: 25px;
+    width: 25px;
+    height: 25px;
+}
+
+i.fa.fa-times-circle {
+    position: relative;
+    top: -450px;
+    right: -650px;
+    font-size: 15px;
+    background: none;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    -moz-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+i.fa.fa-times-circle:hover {
+    -moz-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    font-size: 22px;
+    text-shadow: 0 0 2px #fff, 0 0 15px #72c1fb, 0 0 25px #72c1fb, 0 0 45px #72c1fb;
+}
+
+.social-row ul li {
+    display: inline;
+    margin: 10px;
+}
+
+.social-row ul {
+    margin-top: 4vh;
+}
+
+ul {
+    padding: 0;
+}
+
+.line{
+    width:100px;
+    height:10px;
+    background: #fff;
+    margin:40px auto;
+}
+
+.social-row {
+    text-align: center;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 10vh;
+    position: absolute;
+    z-index:9;
+}
+
+.radio-group {
+    margin: 20px auto;
+}
+
+input[type=radio]:not(:first-child) {
+    margin-left: 55px!important;
+}
+input[type=checkbox], input[type=radio] {
+    margin: 4px 5px 0;
+    margin-top: 1px\9;
+    line-height: normal;
+    width: auto;
+    display: inline-block;
+}
+
+* { box-sizing:border-box; }
+
+/* basic stylings ------------------------------------------ */
+/* form starting stylings ------------------------------- */
+.group 			  { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:100%;
+  border:none;
+  border-bottom:1px solid #757575;
+background: none;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+.group label 				 {
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ .group label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:100%; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100%; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+
+
+/* ANIMATIONS ================ */
+@media (max-width: 800px) {
+    form {
+        width: 90%
+    }
+    i.fa.fa-times-circle {
+        position: absolute;
+        top: -20%;
+        right: 48%;
+    }
+}
