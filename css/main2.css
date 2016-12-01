@@ -105,6 +105,10 @@ button.btn {
     color:#fff;
     transition: 0.5s;
 }
+i.fa.fa-times-circle:hover{    
+    color: #8b81bc;
+    transition: 0.5s;
+}
 
 .form.container {
     text-align: center;
@@ -176,7 +180,7 @@ form {
 }
 
 form h2 {
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
 }
 .col-sm-12 {
     margin: 0 auto;
@@ -207,14 +211,6 @@ i.fa.fa-times-circle {
     transition: 0.4s;
 }
 
-i.fa.fa-times-circle:hover {
-    -moz-transition: 0.4s;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    font-size: 22px;
-    text-shadow: 0 0 2px #fff, 0 0 15px #72c1fb, 0 0 25px #72c1fb, 0 0 45px #72c1fb;
-}
-
 .social-row ul li {
     display: inline;
     margin: 10px;
@@ -231,6 +227,10 @@ ul {
     margin: 40px auto;
 }
 
+.formhidden{
+display:none;
+}
+
 .social-row {
     text-align: center;
     position: relative;
@@ -241,7 +241,7 @@ ul {
 }
 
 .radio-group {
-    margin: 30px auto;
+    margin: 60px auto;
 }
 
 input[type=radio]:not(:first-child) {
@@ -258,7 +258,7 @@ input[type=radio] {
 }
 
 .radio-group label {
-    margin: 0 10px;
+    margin-left:10px;
     font-size: 15px;
 }
 

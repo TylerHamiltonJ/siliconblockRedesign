@@ -8,6 +8,13 @@
 <!--<![endif]-->
 
 <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WQP2XD');</script>
+<!-- End Google Tag Manager -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +22,6 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Silicon Block Party</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -26,7 +32,10 @@
 </head>
 
 <body class="sbp">
-    
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQP2XD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <div class="main-bg">
         <div class="vid-content">
             <video playsinline autoplay muted loop poster="" id="bgvid">
@@ -34,56 +43,61 @@
         </div>
         <section id="top"></section>
         <section id="middle" class="fadeout">
-        <div class="middle-text">
-            <h1>Silicon Block<br/>Party</h1>
-            <div class="line"></div>
-            <h1 class="subtitle">Talk, Play, Party</h1>
-        </div>
+            <div class="middle-text">
+                <h1>Silicon Block<br/>Party</h1>
+                <div class="line"></div>
+                <h1 class="subtitle">Talk, Play, Party</h1> </div>
         </section>
         <section id="bottom" class="fadeout">
-        <div class="form container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="button-box">
-                        <button class="waves-effect waves-light btn" onclick="ticketForm()">Request an invitation</button>
+            <div class="form container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="button-box">
+                            <button class="waves-effect waves-light btn" onclick="ticketForm()">Request an invitation</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="social-row">
-            <ul>
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-            </ul>
-        </div>
+            <div class="social-row">
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
         </section>
         <div class="container form pop-up">
             <div class="row tickets-form">
-                <div class="col-sm-12"> <i class="fa fa-times-circle" aria-hidden="true"></i>
-                    <form>
+                <div class="col-sm-12 formstart"> <i class="fa fa-times-circle" aria-hidden="true"></i>
+                    <form id="contactform">
                         <h2>Want to attend Melbourne's<br/>most exclusive event?</h2>
                         <div class="group">
-                            <input type="text" required> <span class="highlight"></span> <span class="bar"></span>
+                            <input type="text" name="name" required> <span class="highlight"></span> <span class="bar"></span>
                             <label>Name</label>
                         </div>
                         <div class="group">
-                            <input type="text" required> <span class="highlight"></span> <span class="bar"></span>
+                            <input type="text" name="email" required> <span class="highlight"></span> <span class="bar"></span>
                             <label>Email</label>
                         </div>
                         <div class="group">
-                            <input type="text" required> <span class="highlight"></span> <span class="bar"></span>
+                            <input type="text" name="company" required> <span class="highlight"></span> <span class="bar"></span>
                             <label>Company</label>
                         </div>
                         <div class="radio-group">
-                        <input type="radio" id="radio1" name="iCheck" />
-                        <label for="radio1">Guest</label> 
-                        <input type="radio" id="radio2" name="iCheck" />
-                        <label for="radio2">Sponsor</label>
+                            <input type="radio" value="guest" id="radio1" name="iCheck" />
+                            <label for="radio1" style="margin-right: 4rem;">Guest</label>
+                            <input type="radio" value="sponsor" id="radio2" name="iCheck" />
+                            <label for="radio2">Sponsor</label>
                         </div>
-                        <button class="waves-effect waves-light btn mont" onclick="window.location.href='thankyou.html'">Request an invitation</button>
+                        <button type="submit" class="waves-effect waves-light btn" id="submit">Request an invitation</button>
                     </form>
+                </div>
+                <div class="col-sm-12 formhidden">
+                    <div class="middle-text">
+                        <h1>Thank you</h1>
+                        <div class="line"></div>
+                        <h1 class="subtitle">We'll be in touch</h1> </div>
                 </div>
             </div>
         </div>
@@ -91,7 +105,7 @@
     <script>
         //Exits the form when you click anywhere else.
         $(".form.pop-up").click(function () {
-            $(".form.pop-up").fadeOut();            
+            $(".form.pop-up").fadeOut();
             $(".fadeout").fadeIn('fast');
         });
         // Doesn't trigger the close when you press the button.
@@ -104,15 +118,44 @@
             $(".row.tickets-form").show();
             $(".fadeout").fadeOut('fast');
         }
+
+        $( "#contactform" ).submit(function( event ) {
+            $(".formstart").fadeOut(function () {
+                $(".formhidden").fadeIn().delay(2000).queue(function (next) {
+                    $(".form.pop-up").fadeOut(function(){
+                    $(".formstart").fadeIn();
+                    $(".formhidden").fadeOut(); 
+                    });
+                    $(".fadeout").fadeIn('fast');
+                    next();
+                });
+            });
+});
+        
+        function thankyou() {
+            
+            
+            $(".formstart").fadeOut(function () {
+                $(".formhidden").fadeIn().delay(2000).queue(function (next) {
+                    $(".form.pop-up").fadeOut(function(){
+                    $(".formstart").fadeIn();
+                    $(".formhidden").fadeOut(); 
+                    });
+                    $(".fadeout").fadeIn('fast');
+                    next();
+                });
+            });
+            
+        }
     </script>
     <script>
-$(document).ready(function(){
-  $('input').iCheck({
-    checkboxClass: 'icheckbox_square-purple',
-    radioClass: 'iradio_square-purple'
-  });
-});
-</script>
+        $(document).ready(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-purple'
+                , radioClass: 'iradio_square-purple'
+            });
+        });
+    </script>
 </body>
 
 </html>
