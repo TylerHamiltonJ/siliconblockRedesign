@@ -15,8 +15,6 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Silicon Block Party</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
@@ -33,19 +31,19 @@
                 <source src="Video/cover.mp4" type="video/mp4"> </video>
         </div>
         <section id="top"></section>
-        <section id="middle" class="fadeout">
+        <section id="middle">
         <div class="middle-text">
-            <h1>Silicon Block<br/>Party</h1>
+            <h1>Thank You</h1>
             <div class="line"></div>
-            <h1 class="subtitle">Talk, Play, Party</h1>
+            <h1 class="subtitle">We will be in touch.</h1>
         </div>
         </section>
-        <section id="bottom" class="fadeout">
-        <div class="form container">
+        <section id="bottom">
+            <div class="form container">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="button-box">
-                        <button class="waves-effect waves-light btn" onclick="ticketForm()">Request an invitation</button>
+                        <button class="waves-effect waves-light btn" onclick="window.location.href='/'">Back to home</button>
                     </div>
                 </div>
             </div>
@@ -63,7 +61,7 @@
             <div class="row tickets-form">
                 <div class="col-sm-12"> <i class="fa fa-times-circle" aria-hidden="true"></i>
                     <form>
-                        <h2>Want to attend Melbourne's<br/>most exclusive event?</h2>
+                        <h2>Want to attend Melbournes most exclusive event?</h2>
                         <div class="group">
                             <input type="text" required> <span class="highlight"></span> <span class="bar"></span>
                             <label>Name</label>
@@ -82,7 +80,7 @@
                         <input type="radio" id="radio2" name="iCheck" />
                         <label for="radio2">Sponsor</label>
                         </div>
-                        <button class="waves-effect waves-light btn mont" onclick="window.location.href='thankyou.html'">Request an invitation</button>
+                        <button class="waves-effect waves-light btn">Apply</button>
                     </form>
                 </div>
             </div>
@@ -91,8 +89,7 @@
     <script>
         //Exits the form when you click anywhere else.
         $(".form.pop-up").click(function () {
-            $(".form.pop-up").fadeOut();            
-            $(".fadeout").fadeIn('fast');
+            $(".form.pop-up").fadeOut();
         });
         // Doesn't trigger the close when you press the button.
         $(".form .row form").click(function (e) {
@@ -102,7 +99,13 @@
         function ticketForm() {
             $(".form.pop-up").fadeIn();
             $(".row.tickets-form").show();
-            $(".fadeout").fadeOut('fast');
+            $(".row.sponsors-form").hide();
+        }
+
+        function sponsorForm() {
+            $(".form.pop-up").fadeIn();
+            $(".row.tickets-form").hide();
+            $(".row.sponsors-form").show();
         }
     </script>
     <script>
