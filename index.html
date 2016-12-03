@@ -53,17 +53,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="button-box">
-                            <button class="waves-effect waves-light btn" onclick="ticketForm()">Request an invitation</button>
+                            <button id="formOpen" class="waves-effect waves-light btn" onclick="ticketForm()">Request an invitation</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="social-row">
                 <ul>
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                    <li><a target="_blank" href="https://www.facebook.com/ieagency/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a target="_blank" href="https://instagram.com/iedigital/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a target="_blank" href="https://twitter.com/IEDigital"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="mailto:hi@ie.com.au"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </section>
@@ -133,8 +133,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 });
         
         function thankyou() {
-            
-            
+            var radioTicket = $('div.radio-group div.checked input').val();
+            dataLayer.push({'event': 'sbpFormSubmission','ticketType': radioTicket });
             $(".formstart").fadeOut(function () {
                 $(".formhidden").fadeIn().delay(2000).queue(function (next) {
                     $(".form.pop-up").fadeOut(function(){
@@ -153,6 +153,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             $('input').iCheck({
                 checkboxClass: 'icheckbox_square-purple'
                 , radioClass: 'iradio_square-purple'
+            });
+            
+            $('#submit').on('click', function(event) {
+                event.preventDefault();
+                
+                var params = $('#contactform').serialize();
+                
+                $.ajax({
+                    type: "POST",
+                    url: 'email.php',
+                    data: params,
+                    dataType: 'json'
+                })
+                .done(function(data) {
+                    if (data.success) {
+                        thankyou();
+                    } else {
+                        alert(data["message"])
+                    }
+                })
+                .fail(function() {
+                    alert("it died");
+
+                })
+                
             });
         });
     </script>

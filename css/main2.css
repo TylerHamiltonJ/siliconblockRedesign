@@ -16,17 +16,6 @@ body {
     background: none;
 }
 
-.main-bg:before {
-    -webkit-transition: all 1s;
-    background: rgba(0, 0, 0, 0.5);
-    content: ' ';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transition: all 1s;
-    width: 100%;
-}
 
 
 video#bgvid {
@@ -51,7 +40,7 @@ video#bgvid {
 
 .vid-content:before {
     content: '';
-    position: absolute;
+    position: fixed;
     background: rgba(0, 0, 0, 0.5);
     top: 0;
     right: 0;
@@ -380,25 +369,6 @@ input:focus ~ .highlight {
 
 /* ANIMATIONS ================ */
 
-@media (max-width: 800px) {
-    html{
-        font-size:8px;
-    }
-    form {
-        width: 90%
-    }
-    i.fa.fa-times-circle {
-        position: absolute;
-        top: -20px;
-        right: 48%;
-    }
-}
-@media (max-width: 400px) {
-    html{
-        font-size:6px;
-    }
-}
-
 section {
     position: relative;
 }
@@ -410,6 +380,7 @@ section {
 #middle {
     height: 60%;
     min-height: 400px;
+    padding:0 5px;
 }
 
 #bottom {
@@ -421,7 +392,7 @@ section {
         height: 10%;
     }
     #middle {
-        height: 70%;
+        height: 60%;
         min-height: 400px;
     }
     #bottom {
@@ -455,4 +426,29 @@ section {
     }
 }
 
- 
+@media (max-width: 800px) {
+    html{
+        font-size:8px;
+    }
+    form {
+        width: 90%
+    }
+    i.fa.fa-times-circle {
+        position: absolute;
+        top: -20px;
+        right: 48%;
+    }
+}
+@media (max-width: 640px) {
+    html{
+        font-size:6px;
+    }
+    .middle-text h1.subtitle {
+    font-size: 2.5rem;
+}
+}
+@media (max-width: 400px) {
+    html{
+        font-size:6px;
+    }
+} 

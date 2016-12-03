@@ -6,7 +6,7 @@ if(isset($_POST['email'])) {
  
     // EDIT THE 2 LINES BELOW AS REQUIRED
  
-    $email_to = "you@yourdomain.com";
+    $email_to = "tylerhamilton@ie.com.au";
  
     $email_subject = "Your email subject line";
  
@@ -17,14 +17,16 @@ if(isset($_POST['email'])) {
     function died($error) {
  
         // your error code can go here
+        $result = array();
  
-        echo "We are very sorry, but there were error(s) found with the form you submitted. ";
- 
-        echo "These errors appear below.<br /><br />";
- 
-        echo $error."<br /><br />";
- 
-        echo "Please go back and fix these errors.<br /><br />";
+        $result["message"] = "We are very sorry, but there were error(s) found with the form you submitted. " .
+            "These errors appear below.<br /><br />" .
+            $error."<br /><br />" .
+            "Please go back and fix these errors.<br /><br />";
+        
+        $result["success"] = false;
+        
+        echo json_encode($result);
  
         die();
  
@@ -40,7 +42,7 @@ if(isset($_POST['email'])) {
  
         !isset($_POST['company']) ||
   
-        !isset($_POST['tickets'])) {
+        !isset($_POST['iCheck'])) {
  
         died('We are sorry, but there appears to be a problem with the form you submitted.');       
  
@@ -54,15 +56,15 @@ if(isset($_POST['email'])) {
  
     $company = $_POST['company']; // not required
  
-    $tickets = $_POST['tickets']; // required
+    $tickets = $_POST['iCheck']; // required
  
      
  
     $error_message = "";
  
-    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+    $email_exp = '/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/';
  
-  if(!preg_match($email_exp,$email_from)) {
+  if(!preg_match($email_exp,$email)) {
  
     $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
  
@@ -112,26 +114,24 @@ if(isset($_POST['email'])) {
  
 $headers = 'From: '.$email."\r\n".
  
-'Reply-To: '.$email.."\r\n" .
+'Reply-To: '.$email."\r\n" .
  
 'X-Mailer: PHP/' . phpversion();
+
+mail($email_to, $email_subject, $email_message, $headers);  
  
-@mail($email, $email_subject, $email_message, $headers);  
+$result = array();
+
+$result["message"] = "Success";
+$result["success"] = true;
+    
+    echo json_encode($result);
  
-?>
- 
- 
- 
-<!-- include your own success html here -->
- 
- 
- 
-Thank you for contacting us. We will be in touch with you very soon.
- 
- 
- 
-<?php
- 
+} else {
+    $result = array();
+
+$result["message"] = "Unrecognised request";
+$result["success"] = false;
+    
+    echo json_encode($result);
 }
- 
-?>
